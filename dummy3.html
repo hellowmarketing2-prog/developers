@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typing Test with Result</title>
+  <style>
+    body {
+      font-family: Arial;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px;
+      background: #f0f0f0;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .test-box {
+      background: #fff;
+      padding: 20px 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      max-width: 700px;
+      width: 100%;
+    }
+
+    #wordContainer {
+      font-size: 20px;
+      margin-bottom: 20px;
+      line-height: 1.6;
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 10px;
+      height: 150px;
+      overflow-y: auto;
+    }
+
+    #userInput {
+      width: 100%;
+      padding: 10px;
+      font-size: 18px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      background: #007bff;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    #timer {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #007bff;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Typing Test Demo</h1>
+
+  <div class="test-box">
+    <div id="timer">Time: 0s</div>
+    <div id="wordContainer"></div>
+    <input type="text" id="userInput" placeholder="Start typing here..." disabled>
+    <button onclick="startTest()">Start Test</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    // Multiple paragraphs
+    const paragraphs = [
+      "The quick brown fox jumps over the lazy dog. Practice typing to increase your speed and accuracy.",
+      "Typing is a useful skill for every developer, designer, and professional. Keep practicing daily.",
+      "Improve your WPM and accuracy by focusing on each word and minimizing mistakes while typing.",
+      "Fast typing improves productivity and helps in coding, writing, and communication effectively."
+    ];
+
+    let wordsArray = [];
+    let typedWords = [];
+    let startTime, timerInterval;
+    const wordContainer = document.getElementById('wordContainer');
+    const userInput = document.getElementById('userInput');
+    const resultDiv = document.getElementById('result');
+    const timerDiv = document.getElementById('timer');
+
+    function getRandomParagraph() {
+      return paragraphs[Math.floor(Math.random() * paragraphs.length)];
+    }
+
+    function startTest() {
+      userInput.value = "";
+      typedWords = [];
+      resultDiv.innerText = "";
+      const paragraph = getRandomParagraph();
+      wordsArray = paragraph.split(" ");
+      wordContainer.innerHTML = paragraph;
+      userInput.disabled = false;
+      userInput.focus();
+      startTime = new Date();
+      let seconds = 0;
+      timerDiv.innerText = `Time: ${seconds}s`;
+
+      // Start timer
+      clearInterval(timerInterval);
+      timerInterval = setInterval(() => {
+        seconds++;
+        timerDiv.innerText = `Time: ${seconds}s`;
+      }, 1000);
+
+      // Listen to input
+      userInput.addEventListener('input', typingHandler);
+    }
+
+    function typingHandler() {
+      let input = userInput.value.trim();
+      let currentWords = input.split(/\s+/); // split by space
+      typedWords = currentWords;
+
+      // End test when all words typed
+      if (typedWords.length >= wordsArray.length) {
+        endTest();
+      }
+    }
+
+    function endTest() {
+      clearInterval(timerInterval);
+      userInput.disabled = true;
+
+      const endTime = new Date();
+      const timeTakenMinutes = (endTime - startTime) / 1000 / 60; // in minutes
+      const wordsTyped = typedWords.length;
+      const wpm = Math.round(wordsTyped / timeTakenMinutes);
+
+      // Accuracy
+      let correctWords = 0;
+      for (let i = 0; i < wordsArray.length; i++) {
+        if (wordsArray[i] === typedWords[i]) correctWords++;
+      }
+      const accuracy = Math.round((correctWords / wordsArray.length) * 100);
+
+      resultDiv.innerText = `✅ Test Completed!\nYour Result: ${wpm} WPM | Accuracy: ${accuracy}%`;
+
+      userInput.removeEventListener('input', typingHandler);
+    }
+  </script>
+
+</body>
+
+</html>
