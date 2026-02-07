@@ -10,7 +10,7 @@ import { ThemeProvider } from "./context/ThemeContext";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ThemeProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/bot-builders-branders">
         <App />
       </BrowserRouter>
     </ThemeProvider>
