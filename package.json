@@ -1,12 +1,9 @@
 {
-<<<<<<< HEAD
   "name": "hh",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-
   "homepage": "https://hellowmarketing2-prog.github.io/our-team-website/",
-
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -15,7 +12,6 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
-
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@fortawesome/fontawesome-free": "^7.1.0",
@@ -24,7 +20,6 @@
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.13.0"
   },
-
   "devDependencies": {
     "@eslint/js": "^9.39.1",
     "@types/react": "^19.2.5",
@@ -36,31 +31,5 @@
     "gh-pages": "^6.3.0",
     "globals": "^16.5.0",
     "vite": "^7.2.4"
-=======
-  "name": "portfolio_website",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Umar-Ai-Devs/Portfolio_Website.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "module",
-  "bugs": {
-    "url": "https://github.com/Umar-Ai-Devs/Portfolio_Website/issues"
-  },
-  "homepage": "https://github.com/Umar-Ai-Devs/Portfolio_Website#readme",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^17.2.3",
-    "express": "^5.2.1",
-    "openai": "^6.16.0"
->>>>>>> 3e1be29034108ad919e43d99cac328aeb616bbf7
   }
 }
