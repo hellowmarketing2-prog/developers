@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: "/our-team-website/",   // 👈 yahan repo ka exact naam
+  // base: "/bot-builders--branders/",   // 👈 yahan repo ka exact naam
 })
