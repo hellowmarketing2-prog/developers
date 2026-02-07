@@ -1,0 +1,203 @@
+/* Scroll to Top Button */
+.scroll-to-top {
+  position: fixed;
+  left: 30px;
+  bottom: 30px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+  transition: all 0.3s ease;
+  z-index: 9999;
+  animation: fadeInUp 0.5s ease-out, pulse 2s ease-in-out infinite;
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 12px 35px rgba(59, 130, 246, 0.6);
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+}
+
+.scroll-to-top:active {
+  transform: translateY(-3px) scale(1.05);
+}
+
+.scroll-to-top i {
+  animation: arrowBounce 1.5s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+  }
+  50% {
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.6);
+  }
+}
+
+@keyframes arrowBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Light Theme */
+[data-theme="light"] .scroll-to-top {
+  background: linear-gradient(135deg, #1e40af, #6d28d9);
+  box-shadow: 0 8px 25px rgba(30, 64, 175, 0.3),
+              0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+[data-theme="light"] .scroll-to-top:hover {
+  background: linear-gradient(135deg, #1e3a8a, #5b21b6);
+  box-shadow: 0 12px 35px rgba(30, 64, 175, 0.5),
+              0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px) scale(1.15);
+  border-color: rgba(255, 255, 255, 1);
+}
+
+[data-theme="light"] .scroll-to-top i {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* Enhanced pulse for light theme */
+@keyframes pulseLightTheme {
+  0%, 100% {
+    box-shadow: 0 8px 25px rgba(30, 64, 175, 0.3),
+                0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    box-shadow: 0 8px 30px rgba(109, 40, 217, 0.5),
+                0 4px 15px rgba(0, 0, 0, 0.15);
+  }
+}
+
+[data-theme="light"] .scroll-to-top {
+  animation: fadeInUp 0.5s ease-out, pulseLightTheme 2s ease-in-out infinite;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .scroll-to-top {
+    left: 20px;
+    bottom: 20px;
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-to-top {
+    left: 15px;
+    bottom: 80px; /* Above mobile nav if any */
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ===== ENHANCED LIGHT THEME EFFECTS ===== */
+
+/* Glow ring effect for light theme */
+[data-theme="light"] .scroll-to-top::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1e40af, #6d28d9, #0e7490);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  animation: rotate 3s linear infinite;
+}
+
+[data-theme="light"] .scroll-to-top:hover::before {
+  opacity: 0.3;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Ripple effect on click for light theme */
+[data-theme="light"] .scroll-to-top::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(30, 64, 175, 0.3);
+  transform: scale(0);
+  opacity: 0;
+}
+
+[data-theme="light"] .scroll-to-top:active::after {
+  animation: rippleEffect 0.6s ease-out;
+}
+
+@keyframes rippleEffect {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+/* Better icon visibility in light theme */
+[data-theme="light"] .scroll-to-top i {
+  color: #ffffff;
+  font-weight: 900;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Floating animation for light theme */
+[data-theme="light"] .scroll-to-top {
+  animation: fadeInUp 0.5s ease-out, 
+             pulseLightTheme 2s ease-in-out infinite,
+             floatLight 3s ease-in-out infinite;
+}
+
+@keyframes floatLight {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+[data-theme="light"] .scroll-to-top:hover {
+  animation: none;
+}

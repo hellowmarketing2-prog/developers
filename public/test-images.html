@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Test</title>
+</head>
+<body>
+    <h1>Image Test</h1>
+    
+    <h2>Profile (Working)</h2>
+    <img src="/profile.jpeg" alt="Profile" style="width:100px; border: 2px solid green;">
+    
+    <h2>Team Images</h2>
+    <img src="/umair.jpeg" alt="Umair" style="width:100px; border: 2px solid red;">
+    <img src="/tassawar.jpeg" alt="Tassawar" style="width:100px; border: 2px solid red;">
+    <img src="/uzair.jpeg" alt="Uzair" style="width:100px; border: 2px solid red;">
+    
+    <h2>Project Images</h2>
+    <img src="/download8.jpg" alt="Download8" style="width:100px; border: 2px solid blue;">
+    <img src="/download6.jpg" alt="Download6" style="width:100px; border: 2px solid blue;">
+    <img src="/download5.jpg" alt="Download5" style="width:100px; border: 2px solid blue;">
+    
+    <script>
+        // Log all image load events
+        document.querySelectorAll('img').forEach(img => {
+            img.onload = () => {
+                console.log('✅ Loaded:', img.src);
+                img.style.border = '2px solid green';
+            };
+            img.onerror = () => {
+                console.error('❌ Failed:', img.src);
+                img.style.border = '2px solid red';
+            };
+        });
+    </script>
+</body>
+</html>
