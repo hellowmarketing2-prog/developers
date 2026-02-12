@@ -1,18 +1,22 @@
-// import React from "react";
-// import profileImg from "./public/profile.png"; // <-- CHANGE if path different
-// import "./effects.css"
+
 import "./About.css"
 import "./Sections.css"
+const base = import.meta.env.BASE_URL;
 function About() {
+
+  const base = import.meta.env.BASE_URL; // ⭐ VERY IMPORTANT
+
   return (
     <>
+
       {/* ABOUT SECTION */}
       <section className="about-section">
         <div className="about-container">
 
+
           {/* IMAGE */}
           <div className="about-image">
-            <img src="/public/profile.jpeg" alt="Profile" />
+            <img src="/profile.jpeg" alt="Profile" />
             <div className="image-glow"></div>
           </div>
 
@@ -254,25 +258,15 @@ function About() {
             </p>
 
             <div className="cta-buttons">
-              {/* <a href="contact.html" className="btn btn-primary">
-                Get In Touch
-              
-              </a> */}
-
-               {/* <Link to="/Contact" className="bb-nav-link"> */}
-                {/* <div className="bb-link-wrapper"> */}
-                  {/* <i className="fas fa-user"></i> */}
-                  {/* <span></span> */}
-                {/* </div> */}
-              {/* </Link> */}
 
 
 
 
 
-              <a href="projects.html" className="btn btn-outline">
+              <a href="/projects" className="btn btn-outline">
                 View My Work
               </a>
+
             </div>
           </div>
         </div>
@@ -322,25 +316,26 @@ function About() {
               <h4 style={{ color: "white" }}>Quick Links</h4>
               <ul>
                 <li>
-                  <a href="index.html" style={{ color: "white" }}>
+                  <a href="/Home" style={{ color: "white" }}>
                     Home
                   </a>
+
                 </li>
                 <li>
-                  <a href="about.html" style={{ color: "white" }}>
+                  <a href="/About" style={{ color: "white" }}>
                     About
                   </a>
                 </li>
                 <li>
-                  <a href="skills.html">Skills</a>
+                  <a href="/skills">Skills</a>
                 </li>
                 <li>
-                  <a href="projects.html" style={{ color: "white" }}>
+                  <a href="/project" style={{ color: "white" }}>
                     Projects
                   </a>
                 </li>
                 <li>
-                  <a href="contact.html" style={{ color: "white" }}>
+                  <a href="/contact" style={{ color: "white" }}>
                     Contact
                   </a>
                 </li>
@@ -369,8 +364,8 @@ function About() {
               &copy; 2024 Portfolio. All rights reserved.
             </p>
           </div>
-        </div>
-      </footer>
+        </div >
+      </footer >
 
 
 

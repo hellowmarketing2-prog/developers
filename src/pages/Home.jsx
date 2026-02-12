@@ -1,10 +1,13 @@
 // src/pages/Home.jsx
 import React, { useEffect } from "react";
 import "./Sections.css"
+const base = import.meta.env.BASE_URL;
+
 
 function Home() {
   useEffect(() => {
     // Chat functionality
+    const base = import.meta.env.BASE_URL;
     const chatButton = document.getElementById("chatButton");
     const chatPopup = document.getElementById("chatPopup");
     const closeChat = document.getElementById("closeChat");
@@ -89,7 +92,7 @@ function Home() {
           </div>
           <div className="hero-image" data-aos="fade-left">
             <div className="image-container">
-              <img src="/profile.jpeg" alt="Profile Picture" className="profile-img" />
+              <img src={`${base}profile.jpeg`} alt="Profile Picture" className="profile-img" />
               <div className="floating-elements">
                 <div className="floating-element element-1">
                   <i className="fab fa-python"></i>
@@ -173,7 +176,7 @@ function Home() {
             {/* Project 1 */}
             <div className="project-card">
               <div className="project-image">
-                <img src="/download8.jpg" alt="Iris Flower Classifier" />
+                <img src={`${base}download8.jpg`} alt="Iris Flower Classifier" />
                 <div className="project-overlay">
                   <div className="project-links">
                     <a href="https://iris-flower-classifier-app-vfjdaodgznqyuvqgg9xych.streamlit.app/" className="project-link" title="View Live" target="_blank" rel="noopener noreferrer">
@@ -199,7 +202,7 @@ function Home() {
             {/* Project 2 */}
             <div className="project-card">
               <div className="project-image">
-                <img src="/download6.jpg" alt="RAG Chatbot" />
+                <img src={`${base}download6.jpg`} alt="RAG Chatbot" />
                 <div className="project-overlay">
                   <div className="project-links">
                     <a href="https://appuct-rules-chatbot-katrg3actix4suf6ursrtm.streamlit.app/" className="project-link" title="View Live" target="_blank" rel="noopener noreferrer">
@@ -225,7 +228,7 @@ function Home() {
             {/* Project 3 */}
             <div className="project-card">
               <div className="project-image">
-                <img src="/download5.jpg" alt="Breast Cancer Prediction" />
+                <img src={`${base}download5.jpg`} alt="Breast Cancer Prediction" />
                 <div className="project-overlay">
                   <div className="project-links">
                     <a href="https://breast-cancer-prediction-s7htkmy9znfofatmhmsi3i.streamlit.app/" className="project-link" title="View Live" target="_blank" rel="noopener noreferrer">
@@ -251,7 +254,7 @@ function Home() {
             {/* Project 4 */}
             <div className="project-card">
               <div className="project-image">
-                <img src="/images4.png" alt="Customer Segmentation" />
+                <img src={`${base}images4.png`} alt="Customer Segmentation" />
                 <div className="project-overlay">
                   <div className="project-links">
                     <a href="https://customer-segmentation-app-co4kcwq7emoec2pdjv5ghw.streamlit.app/" className="project-link" title="View Live" target="_blank" rel="noopener noreferrer">
@@ -277,7 +280,7 @@ function Home() {
             {/* Project 5 */}
             <div className="project-card">
               <div className="project-image">
-                <img src="/images3.jpg" alt="Fraud Detection" />
+                <img src={`${base}images3.jpg`} alt="Fraud Detection" />
                 <div className="project-overlay">
                   <div className="project-links">
                     <a href="https://fraud-detection-app-wlp3fg2qklohwyocxwi5xg.streamlit.app/" className="project-link" title="View Live" target="_blank" rel="noopener noreferrer">
@@ -303,7 +306,7 @@ function Home() {
             {/* Project 6 */}
             <div className="project-card">
               <div className="project-image">
-                <img src="/images2.png" alt="Spam Email Classifier" />
+                <img src={`${base}images2.png`} alt="Spam Email Classifier" />
                 <div className="project-overlay">
                   <div className="project-links">
                     <a href="https://spam-vs-ham-email-classifier-uugi3u4ca2jw8f6dmu8i99.streamlit.app/" className="project-link" title="View Live" target="_blank" rel="noopener noreferrer">
@@ -329,7 +332,7 @@ function Home() {
             {/* Project 7 */}
             <div className="project-card">
               <div className="project-image">
-                <img src="/images1.jpg" alt="Multi-Agent AI App" />
+                <img src={`${base}images1.jpg`} alt="Multi-Agent AI App" />
                 <div className="project-overlay">
                   <div className="project-links">
                     <a href="#" className="project-link" title="View Live" target="_blank" rel="noopener noreferrer">
@@ -355,7 +358,7 @@ function Home() {
             {/* Project 8 */}
             <div className="project-card">
               <div className="project-image">
-                <img src="/e-.jpg" alt="E-commerce Website" />
+                <img src={`${base}e-.jpg`} alt="E-commerce Website" />
                 <div className="project-overlay">
                   <div className="project-links">
                     <a href="E-comerace.html" className="project-link" title="Live Demo" target="_blank" rel="noopener noreferrer">
@@ -394,7 +397,7 @@ function Home() {
           </div>
           <div className="team-flex">
             <div className="team-box">
-              <img src="/profile.jpeg" alt="Umar Farooq" />
+              <img src={`${base}profile.jpeg`} alt="Umar Farooq" />
               <div className="team-info">
                 <h2>Umar Farooq</h2>
                 <h3>AI Developer</h3>
@@ -429,7 +432,7 @@ function Home() {
             </div>
 
             <div className="team-box">
-              <img src="/umair.jpeg" alt="Umair Ali" />
+              <img src={`${base}umair.jpeg`} alt="Umair Ali" />
               <div className="team-info">
                 <h2>Umair Ali</h2>
                 <h3>GOOGLE & META ADDS</h3>
@@ -464,7 +467,7 @@ function Home() {
             </div>
 
             <div className="team-box">
-              <img src="/tassawar.jpeg" alt="Tassawar Hussain" />
+              <img src={`${base}tassawar.jpeg`} alt="Tassawar Hussain" />
               <div className="team-info">
                 <h2>Tassawar Hussain</h2>
                 <h3>GRAPHIC DESIGNER</h3>
@@ -499,7 +502,7 @@ function Home() {
             </div>
 
             <div className="team-box">
-              <img src="/uzair.jpeg" alt="Aziz Ali" />
+              <img src={`${base}uzair.jpeg`} alt="Aziz Ali" />
               <div className="team-info">
                 <h2>Aziz Ali</h2>
                 <h3>WEB Developer</h3>
@@ -558,9 +561,9 @@ function Home() {
         </div>
         <div id="chatBox"></div>
         <div id="chatInput">
-          <input 
-            type="text" 
-            id="userInput" 
+          <input
+            type="text"
+            id="userInput"
             placeholder="Type a message..."
             onKeyDown={handleKeyDown}
           />
